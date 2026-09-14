@@ -18,6 +18,16 @@
             image: ghcr.io/screem2020/koroche-practice-ci-cd:sha-123b33d        # напр. ghcr.io/you/app:latest
             ports:
               - containerPort: 8080
+            env:
+              # JDBC URL: host 'postgres' = имя Service Postgres в этом же namespace
+              - name: DB_HOST
+                value: postgres.student-manij-izzatov.svc.cluster.local
+              - name: DB_NAME
+                value: appdb
+              - name: DB_USERNAME
+                value: appuser
+              - name: DB_PASSWORD
+                value: 96bc68a6201404468179326bab7fe91b
             envFrom:
               - configMapRef:
                   name: spring-app
