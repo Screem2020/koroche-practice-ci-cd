@@ -1,0 +1,10 @@
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: spring-app
+    namespace: student-manij-izzatov
+  data:
+    APP_NAME: "spring-app"
+    APP_ENV: "dev"
+    SERVER_PORT: "8080"
+
